@@ -1,0 +1,38 @@
+
+
+{% extends 'layout.html' %}
+{% block title %}
+Home Page
+{% endblock title %}
+{% block content %}
+{% include 'slider.html' with sliderdata=slider%}
+
+{% load static %}
+    <!-- /.page-header-->
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                {% for item in downloads %}
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb10">
+                    <div class="download-block">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-12">
+                                <div class="download-icon"><img src="{% static 'images/pdf_icon.png' %}" alt=""></div>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-5 col-xs-12">
+                                <div class="download-content">
+                                    <h3 class="download-title">{{item.name}}</h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="download-btn"><a href="#" class="btn btn-default"><i class="fa fa-download"></i> download</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content%}

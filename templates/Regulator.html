@@ -1,0 +1,27 @@
+
+{% extends 'layout.html' %}
+{% block title %}
+Home Page
+{% endblock title %}
+{% block content %}
+{% include 'slider.html' with sliderdata=slider%}
+
+{% load static %}
+
+  <!-- partner -->
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                {% for item in regulators %}
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="partner-logo">
+                       <div class="logo-img"> <img src="{{item.image.url}}" alt=""></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    <!-- /.partner-->
+    {% endblock content%}

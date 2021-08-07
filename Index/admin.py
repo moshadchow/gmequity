@@ -2,15 +2,16 @@ from django.contrib import admin
 
 from .models import about
 from .models import slider
-from .models import client
+from .models import partner
 from .models import category
 from .models import product
+from .models import advisor
 
 
 admin.site.register(about)
 admin.site.register(slider)
-admin.site.register(client)
-
+admin.site.register(partner)
+admin.site.register(advisor)
 
 @admin.register(category)
 class categoryAdmin(admin.ModelAdmin):
