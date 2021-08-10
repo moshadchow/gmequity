@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Contact',
     'Regulator',
     'Download',
+    'ckeditor',
     'Authentication'
 ]
 

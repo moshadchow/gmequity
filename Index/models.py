@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 class about(models.Model):
     title = models.CharField(max_length=100, blank=False)
@@ -34,16 +34,40 @@ class advisor(models.Model):
     def __str__(self):
         return self.name
 
-class category(models.Model):
-    cat_nm = models.CharField(max_length=20)
-    remarks = models.CharField(max_length=700, blank=False)
-    image = models.ImageField(upload_to='category/', blank=False)
+class service(models.Model):
+    name = models.CharField(max_length=50)
+    description = RichTextField()
+    image = models.ImageField(upload_to='service/', blank=False)
     
     def __str__(self):
-        return self.cat_nm
+        return self.name
 
+class approach(models.Model):
+    name = models.CharField(max_length=50)
+    description = RichTextField()
+    image = models.ImageField(upload_to='approach/', blank=False)
+    
+    def __str__(self):
+        return self.name
 
-class product(models.Model):
-    p_name = models.CharField(max_length=70)
-    image = models.ImageField(upload_to='category/', blank=False)
-    cat = models.ForeignKey(category, on_delete=models.CASCADE)
+class strategy(models.Model):
+    name = models.CharField(max_length=50)
+    description = RichTextField()
+    image = models.ImageField(upload_to='strategy/', blank=False)
+    
+    def __str__(self):
+        return self.name
+
+class fund_info(models.Model):
+    name = models.CharField(max_length=50)
+    description = RichTextField()
+
+    def __str__(self):
+        return self.name
+
+class fund_protect(models.Model):
+    name = models.CharField(max_length=50)
+    description = RichTextField()
+
+    def __str__(self):
+        return self.name

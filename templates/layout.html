@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title> Quantum Investment Template</title>
+    <title> GM Equity </title>
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Style CSS -->
@@ -35,35 +35,33 @@
   <!-- ======= Header ======= -->
   <!-- header-section-->
   <div class="header-wrapper">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-md-2 col-sm-3 col-xs-12">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                 <div class="logo">
-                    <a href="index.html"><img src="{% static 'images/GMELLOGO.png' %}" alt=""> </a>
+                    <a href="{% url 'home' %}"><img src="{% static 'images/GMELLOGO.png' %}" alt=""> </a>
                 </div>
             </div>
-            <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                 <!-- navigations-->
                 <div class="navigation">
                     <div id="navigation">
                       <ul>
-                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                        <li class="has-sub"><a href="#">About</a>
+                        <li class="active"><a href="{% url 'home' %}">Home</a></li>                        
+                        <li><a href="{% url 'approach-single' 1 %}">Approach</a></li>
+                        <li><a href="{% url 'service-single' 1 %}">Service</a></li>
+                        <li><a href="{% url 'strategy-single' 1 %}">Strategy</a></li>
+                        <li><a href="{% url 'about' %}">Who we are</a></li>
+                        <li><a href="{% url 'fund-info' %}">Fund Information</a></li>
+                        <li><a href="{% url 'fund-protect' %}">Fund Protection</a></li>
+                        <li class="has-sub"><a href="#">Others</a>
                             <ul>
-                                <li><a href="{% url 'about' %}">About</a></li>
-                                <li><a href="adviser-list.html">Adviser List</a></li>
+                                <li><a href="{% url 'partner' %}">Partner</a></li>
+                                <li><a href="{% url 'regulator' %}">Regulator</a></li>
+                                <li><a href="{% url 'download' %}">Download</a></li>
                             </ul>
                         </li>
-                        <li class="has-sub"><a href="#">Services</a>
-                          <ul>
-                              <li><a href="mutual-fund.html">Service List</a></li>
-                              <li><a href="corpoarte-advisory.html">Service Single</a></li>
-                          </ul>
-                      </li>
-                      <li><a href="{% url 'partner' %}">Partner</a></li>
-                      <li><a href="{% url 'regulator' %}">Regulator</a></li>
-                      <li><a href="{% url 'download' %}">Download</a></li>
-                      <li><a href="#">Contact Us</a>
+                      <li><a href="{% url 'contact' %}">Contact Us</a>
                     </ul>
                     </div>
                 </div>

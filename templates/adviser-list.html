@@ -1,0 +1,41 @@
+
+{% extends 'layout.html' %}
+{% block title %}
+Home Page
+{% endblock title %}
+{% block content %}
+{% include 'slider.html' with sliderdata=slider%}
+
+{% load static %}
+    <!-- investment advisor -->
+    <div class="advisor-wrapper">
+        {% for item in advisors %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="advisor-block">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="advisor-img">
+                                    <img src="{{item.image.url}}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="advisor-content">
+                                    <p class="advisor-text">{{item.quote}}</p>
+                                    <p class="advisor-meta">{{item.name}}</p>
+                                    <p>(Investment Advisor)</p>
+                                    <div class="sign-icon">
+                                        <img src="./images/sign_4.png" alt="" class="img-responsive">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- /.investment advisor -->
+{% endblock content %}

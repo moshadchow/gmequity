@@ -1,0 +1,51 @@
+
+{% extends 'layout.html' %}
+{% block title %}
+Home Page
+{% endblock title %}
+{% block content %}
+{% include 'slider.html' with sliderdata=slider%}
+
+{% load static %}
+<div class="space-medium">
+    <div class="container">
+        <div class="row">
+            {%for item in services %}
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="service-block">
+                    <div class="service-icon">
+                        <img src="{{item.image.url}}" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h4><a href="#" class="title">
+                           {{item.cat_nm}} </a></h4>
+                        <p>{{item.remarks}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- /.service -->
+<!-- cta-wrapper -->
+<div class="cta-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-12">
+                <div class="cta-wrapper-icon">
+                    <img src="./images/advisor.svg" alt="" class="img-responsive">
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                <p class="cta-wrapper-text">Get Best investment goals &amp; get them
+                    <br> managed by the experts.</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <a href="#" class=" btn btn-default btn-lg">ask an expert</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.cta-wrapper -->
+{% endblock content %}

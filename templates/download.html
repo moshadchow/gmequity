@@ -17,7 +17,7 @@ Home Page
                     <div class="download-block">
                         <div class="row">
                             <div class="col-lg-1 col-md-1 col-sm-2 col-xs-12">
-                                <div class="download-icon"><img src="{% static 'images/pdf_icon.png' %}" alt=""></div>
+                                <div class="download-icon"><img src="{{item.image.url}}" alt=""></div>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-5 col-xs-12">
                                 <div class="download-content">
@@ -25,7 +25,7 @@ Home Page
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                <div class="download-btn"><a href="#" class="btn btn-default"><i class="fa fa-download"></i> download</a></div>
+                                <div class="download-btn"><a href="{{item.image.url}}" target="_blank" class="btn btn-default"><i class="fa fa-download"></i> download</a></div>
                             </div>
                         </div>
                     </div>

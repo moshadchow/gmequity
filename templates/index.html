@@ -6,31 +6,94 @@
 {% include 'slider.html' with sliderdata=slider%}
 <!-- ======= About Us Section ======= -->
 {% load static %}
-    <!-- service -->
-    <div class="space-medium">
-      <div class="container">
-          <div class="row">
-              {%for item in categories %}
-              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                  <div class="service-block">
-                      <div class="service-icon">
-                          <img src="{{item.image.url}}" alt="">
-                      </div>
-                      <div class="service-content">
-                           <h4><a href="#"  class="title">
-                             {{item.cat_nm}} </a></h4>
-                          <p>{{item.remarks}}</p>
-                      </div>
-                  </div>
-              </div>
-              {% endfor %}
-          </div>
-      </div>
-  </div>
+<!-- approach -->
+<div class="space-medium">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div>
+                        <div class="section-title">
+                            <h2>Our Approach</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+             {% for item in approaches %}
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 nopr nopl">
+                    <div class="treatment-block">
+                        <div class="treatment-img"><a href="#" class="imghover"><img src="{{item.image.url}}" alt="" class="img-responsive"></a></div>
+                        <a href="#" class="treatment-content">
+                                    {{item.name}}</a>
+                    </div>
+                </div>
+            {% endfor %}    
+            </div>
+        </div>
+</div>
+<!-- /.approach-->
+<!-- service -->
+  <div class="space-medium">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-title">
+                            <!-- section title-->
+                            <h2>Our Service</h2>
+                        </div>
+                        <!-- /.section title-->
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- product-1 -->
+                    {% for item in services %}
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="product-block">
+                            <div class="product-img"><img src="{{item.image.url}}" alt="" class="img-responsive"></div>
+                            <div class="product-content">
+                                <h3><a href="#" class="title">{{item.name}}</a></h3>
+                                <p>Personal loan mini content you can write here. </p>
+                                <a href="#" class="btn-arrow"> <span class="arrow"><i class="icon-next-10"></i></span></a> </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
   <!-- /.service -->
+<!-- startegy -->
+<div class="space-medium">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div>
+                <div class="section-title">
+                    <h2>Our Startegy</h2>
+                </div>
+            </div>
+        </div>
+     </div>
+        <div class="row">
+            {%for item in strategies %}
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="service-block">
+                    <div class="service-icon">
+                        <img src="{{item.image.url}}" alt="">
+                    </div>
+                    <div class="service-content">
+                         <h4><a href="#"  class="title">
+                           {{item.name}} </a></h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </div>
+<!-- /.startegy -->
   <!--partner-logo -->
-  <div class="space-medium bg-light ">
-      <div class="container-fluid">
+<div class="space-medium bg-light ">
+    <div class="container-fluid">
           <div class="row">
             {% for item in partners %}
               <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
@@ -39,33 +102,36 @@
             {% endfor %}  
           </div>
       </div>
-  </div>
+</div>
   <!--partner-logo -->
   <!--about -->
-  <div class="space-medium">
+<div class="space-medium">
       <div class="container">
           <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                   <div class="about-section">
                       <h2>{{about.title}}</h2>
-                      <p class="lead">{{about.description}} <strong>consecter anulla alacinia consequate</strong> sonese magliquam vulputate seronse.</p>
-                      <div class="row">
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mb30">
+                      <p class="lead">{{about.description}}</p>
+                          <div class="mb30">
                               <h4>Our Mission</h4>
-                              <p>Integer consequat erossed seroni tempor aliquetaesente in minibh consecter anulla alacinia.</p>
+                              <strong>Provide Finest Service </strong>
+                              <p>We want to provide excellent financial solutions to our clients with honesty and integrity.</p>
+                               <strong>Multidimensional Financial Advisory  </strong>
+                              <p>We look for solving complex financial issues and bring positive transformation for our clients through innovative approaches.</p>
+                               <strong>Promote Bangladesh Globally </strong>
+                              <p>We aim to achieve sustainable growth of investments for local and global investors at the same time promoting the Country globally and contributing to the economic development.</p>
                           </div>
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mb30">
-                              <h4>Our Vision</h4>
-                              <p>Maecenas vitae leoest ntegera on orci nullau biquis dicum llentque habiistique.</p>
-                          </div>
-                      </div>
                       <a href="#" class="btn btn-default mb30">More About Company</a>
                   </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                   <img src="{{about.image.url}}" alt="" class="img-responsive">
-              </div>
-          </div>
+                        <div class="mb30">
+                              <h4>Our Vision</h4>
+                              <p>Our dream is to become the most trusted and multidimensional financial advisor locally and globally.</p>
+                          </div>   
+                    </div>
+            </div>
       </div>
   </div>
   <!--/.about -->
@@ -111,6 +177,5 @@
       </div>
   </div>
 </div>
-  <!-- /.investment advisor -->
-    
+
 {% endblock content %}
