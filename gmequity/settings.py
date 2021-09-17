@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'Regulator',
     'Download',
     'ckeditor',
-    'Authentication'
+    'Authentication',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'gmequity.urls'
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 TEMPLATES = [
     {
@@ -141,3 +143,9 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.sheltechbrokerage.com'
+EMAIL_PORT = 25
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'portfolio@sheltechbrokerage.com'
+EMAIL_HOST_PASSWORD = 'PortF@120#'

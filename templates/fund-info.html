@@ -1,19 +1,31 @@
 
 {% extends 'layout.html' %}
 {% block title %}
-Home Page
+Inner Page
 {% endblock title %}
 {% block content %}
-{% include 'slider.html' with sliderdata=slider%}
 
 {% load static %}
-    <!-- service single -->
-    <div class="content">
+
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>GM Equity 1st Mutual Fund</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+    <section class="inner-page">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                     {{fund_info.description | safe}}
-                </div>
+                </div>  
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <!-- sidenav-section -->
                     <div class="sidenav">
@@ -21,71 +33,9 @@ Home Page
                          <li><a href="{% url 'fund-info' %}">{{fund_info.name}}</a></li>
                         </ul>
                     </div>
-                    <!-- /.sidenav-section -->
-                    <!-- Form-section -->
-                    <div class="form-widget">
-                        <h3 class="text-white">Ask To Expert</h3>
-                        <form>
-                            <div class="form-group">
-                                <label class="control-label sr-only "></label>
-                                <input id="name" type="text" placeholder="Name" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label sr-only "></label>
-                                <input type="text" placeholder="Email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label sr-only"></label>
-                                <input id="phone" type="text" placeholder="Phone" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label required sr-only"></label>
-                                <select id="select" name="select" class="form-control">
-                                    <option value="">Services</option>
-                                    <option value="">Bokerage</option>
-                                    <option value="">Mutual Fund</option>
-                                    <option value="">Insurance</option>
-                                    <option value="">Valuable Service</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label sr-only"></label>
-                                <textarea class="form-control" id="textarea" name="textarea" rows="4" placeholder="Messages"></textarea>
-                            </div>
-                            <button type="submit" name="singlebutton" class="btn btn-primary btn-block ">Submit</button>
-                        </form>
-                        <!-- /.form-section -->
-                    </div>
-                    <!-- widget-testimonial -->
-                    <div class="widget">
-                        <h2 class="widget-title">Client Reviews</h2>
-                        <div class="widget-testimonial">
-                        <div class="owl-carousel owl-Four owl-theme">
-                            <div class="item">
-                                <div class="widget-testi-content">
-                                    <p class="testi-text">�Nam scelerisque kenosere cursuisese lacus nuncesese iaculis aur vitae conseeture sagittis urnaean egestas libero et nunce.� </p>
-                                    <h4>- Cathy Calderon</h4>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="widget-testi-content">
-                                    <p class="testi-text">�Suspendisseid libero accumsans tempus dolor utgravida neqoins edictum elitin imperdiet augues proin diam duihendrerete.� </p>
-                                    <h4>- Mark Novel</h4>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="widget-testi-content">
-                                    <p class="testi-text">Accumpus dolor utgda neeictum elitin imprdiet agueroin diamdui hendrerit etblanpat lorem ipsum dolro sit quisesicula. </p>
-                                    <h4>- lipstom misty</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <!-- /.widget-testimonial -->
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /.single-services -->
+    </section>
+  </main><!-- End #main -->
 {% endblock content %}

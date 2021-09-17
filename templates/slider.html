@@ -1,25 +1,24 @@
 {% load static %}
-      <!-- slider -->
-      <div class="slider">
-        <div class="owl-carousel owl-one owl-theme">
-            {% for item in sliders %}
-            <div class="item">
-                <div class="slider-img"> <img src="{{item.image.url}}" alt=""></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-8 col-sm-6 col-xs-12">
-                            <div class="slider-captions">
-                                <h1 class="slider-title">{{item.title}}</h1>
-                                <ul class="hidden-sm hidden-xs">
-                                    <li>{{item.description}}</li>
-                                </ul>
-                                <a href="#" class="btn btn-primary btn-lg hidden-xs">Get Free Template</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
+    <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Powerful Digital Solutions With Gp<span>.</span></h1>
+          <h2>We are team of talented digital marketers</h2>
         </div>
+      </div>
+      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+        {% for item in approaches %}
+            <div class="col-xl-2 col-md-4">
+            <div class="icon-box">
+                <i class="{{item.css_name}}"></i>
+                <h3><a href="{% url 'approach-single' item.id %}">{{item.name}}</a></h3>
+            </div>
+            </div>
+       {% endfor %}
+      </div>
+
     </div>
-    <!-- /.slider -->
+  </section><!-- End Hero -->

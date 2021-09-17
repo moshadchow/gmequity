@@ -1,0 +1,9 @@
+{% extends 'layout.html' %} {% block title %} Vision-Mission Page 
+{% endblock title %} {% block content %} {% load static %}
+
+<div class="content">
+  <div class="container">
+    <div class="row">{{com_goal.description | safe }}</div>
+  </div>
+</div>
+{% endblock content %}

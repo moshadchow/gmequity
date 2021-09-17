@@ -1,181 +1,307 @@
-{% extends 'layout.html' %}
-    {% block title %}
-    Home Page
-    {% endblock title %}
+{% extends 'layout.html' %} {% block title %} Home Page {% endblock title %} 
 {% block content %}
-{% include 'slider.html' with sliderdata=slider%}
+{% include 'slider.html' with sliderdata=slider %}
+{% include 'header_menu.html' %}
 <!-- ======= About Us Section ======= -->
 {% load static %}
-<!-- approach -->
-<div class="space-medium">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div>
-                        <div class="section-title">
-                            <h2>Our Approach</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-             {% for item in approaches %}
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 nopr nopl">
-                    <div class="treatment-block">
-                        <div class="treatment-img"><a href="#" class="imghover"><img src="{{item.image.url}}" alt="" class="img-responsive"></a></div>
-                        <a href="#" class="treatment-content">
-                                    {{item.name}}</a>
-                    </div>
-                </div>
-            {% endfor %}    
-            </div>
-        </div>
-</div>
-<!-- /.approach-->
-<!-- service -->
-  <div class="space-medium">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="section-title">
-                            <!-- section title-->
-                            <h2>Our Service</h2>
-                        </div>
-                        <!-- /.section title-->
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- product-1 -->
-                    {% for item in services %}
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="product-block">
-                            <div class="product-img"><img src="{{item.image.url}}" alt="" class="img-responsive"></div>
-                            <div class="product-content">
-                                <h3><a href="#" class="title">{{item.name}}</a></h3>
-                                <p>Personal loan mini content you can write here. </p>
-                                <a href="#" class="btn-arrow"> <span class="arrow"><i class="icon-next-10"></i></span></a> </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-  <!-- /.service -->
-<!-- startegy -->
-<div class="space-medium">
-    <div class="container">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div>
-                <div class="section-title">
-                    <h2>Our Startegy</h2>
-                </div>
-            </div>
-        </div>
-     </div>
-        <div class="row">
-            {%for item in strategies %}
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="service-block">
-                    <div class="service-icon">
-                        <img src="{{item.image.url}}" alt="">
-                    </div>
-                    <div class="service-content">
-                         <h4><a href="#"  class="title">
-                           {{item.name}} </a></h4>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-  </div>
-<!-- /.startegy -->
-  <!--partner-logo -->
-<div class="space-medium bg-light ">
-    <div class="container-fluid">
-          <div class="row">
-            {% for item in partners %}
-              <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-                <div class="logo-img">  <img src="{{item.image.url}}" alt="" class="img-responsive" ></div>
-              </div>
-            {% endfor %}  
-          </div>
-      </div>
-</div>
-  <!--partner-logo -->
-  <!--about -->
-<div class="space-medium">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                  <div class="about-section">
-                      <h2>{{about.title}}</h2>
-                      <p class="lead">{{about.description}}</p>
-                          <div class="mb30">
-                              <h4>Our Mission</h4>
-                              <strong>Provide Finest Service </strong>
-                              <p>We want to provide excellent financial solutions to our clients with honesty and integrity.</p>
-                               <strong>Multidimensional Financial Advisory  </strong>
-                              <p>We look for solving complex financial issues and bring positive transformation for our clients through innovative approaches.</p>
-                               <strong>Promote Bangladesh Globally </strong>
-                              <p>We aim to achieve sustainable growth of investments for local and global investors at the same time promoting the Country globally and contributing to the economic development.</p>
-                          </div>
-                      <a href="#" class="btn btn-default mb30">More About Company</a>
-                  </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                  <img src="{{about.image.url}}" alt="" class="img-responsive">
-                        <div class="mb30">
-                              <h4>Our Vision</h4>
-                              <p>Our dream is to become the most trusted and multidimensional financial advisor locally and globally.</p>
-                          </div>   
-                    </div>
-            </div>
-      </div>
-  </div>
-  <!--/.about -->
-  <hr>
-  <!-- investment advisor-->
-   <div class="mb130">
-      <div class="bg-default">
-      <div class="container">
-          <div class="row">
-              <div class="advisor-carousel">
-                  <div class="owl-carousel owl-two owl-theme ">
-                      {% for item in advisors %}
-                      <div class="item">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                              <div class="advisor-section">
-                                  <div class="row">
-                                      <div class="col-lg-6 col-md-6 hidden-sm hidden-xs">
-                                          <div class="advisor-img">
-                                              <img src="{{item.image.url}}" alt="">
-                                          </div>
-                                      </div>
-                                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                          <div class="advisor-content">
-                                              <p class="advisor-text">{{item.quote}}</p>
-                                              <p class="advisor-meta">{{item.name}}</p>
-                                              <p>({{item.designation}})</p>
-                                              <div class="sign-icon">
-                                                  <img src="{% static 'images/sign_1.png' %}" alt="" class="img-responsive">
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="">
-                                  <div class=""><span></span></div>
-                              </div>
-                          </div>
-                      </div>
-                      {% endfor %}
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
+<main id="main">
+  <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
 
-{% endblock content %}
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{% static 'img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <h3>We Help Our Clients Build a Sustainable Future</h3>
+            <p class="fst-italic">
+              GM Equity Limited is an Asset Management Company, licensed by Bangladesh Securities and Exchange Commission (BSEC) has made a new entry in the Capital Market of Bangladesh.
+            </p>
+            <h4>Mission</h4>
+            <ul>
+             <li><h5>Provide Finest Service</h5>
+             <ul>
+              <li><i class="ri-check-double-line"></i> We want to provide excellent financial solutions to our clients with honesty and integrity.</li>
+            </ul>
+            </li>
+            <li><h5>Multidimensional Financial Advisory</h5>
+             <ul>
+              <li><i class="ri-check-double-line"></i> We look for solving complex financial issues and bring positive transformation for our clients through innovative approaches.</li>
+            </ul>
+            </li>
+            <li><h5>Promote Bangladesh Globally</h5>
+             <ul>
+              <li><i class="ri-check-double-line"></i> We aim to achieve sustainable growth of investments for local and global investors at the same time promoting the Country globally and contributing to the economic development.</li>
+            </ul>
+            </li>
+             <h4>Vision</h4>
+             <ul>
+              <li><i class="ri-check-double-line"></i> Our dream is to become the most trusted and multidimensional financial advisor locally and globally.</li>
+            </ul>
+            </li>
+            <p>
+              Our aim is to become the top class Asset Management Company in the country by providing finest quality wealth Management service to our clients. We operate under the corporate holding of Deshbandhu Group and our purpose is to help all kinds of investors to manage their funds to maximize the return by managing the risk in a very efficient way.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+ <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container" data-aos="zoom-in">
+        <div class="clients-slider swiper-container">
+          <div class="swiper-wrapper align-items-center">
+          {% for item in partners %}
+            <div class="swiper-slide"><img src="{{item.image.url}}" class="img-fluid" alt=""></div>
+          {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- End Clients Section -->
+ <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="image col-lg-6" style="background-image: url('/static/img/features.jpg')"; data-aos="fade-right"></div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          {% for item in strategies %}
+            {% if forloop.counter == 1 %}
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="{{item.css_name}}"></i>
+              <h4>{{item.name}}</h4>
+              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+            </div>
+            {% else %}
+            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+              <i class="{{item.css_name}}"></i>
+               <h4>{{item.name}}</h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+            </div>
+            {% endif %}
+          {% endfor %}  
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+<!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Check our Services</p>
+        </div>
+        <div class="row">
+            {% for item in services %}
+            {% if forloop.counter == 1 %}
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box">
+                  <div class="icon"><i class="{{item.css_name}}"></i></div>
+                  <h4><a href="{% url 'service-single' item.id %}">{{item.name}}</a></h4>
+                  <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                </div>
+              </div>
+            {% elif forloop.counter == 2 %}  
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-box">
+                  <div class="icon"><i class="{{item.css_name}}"></i></div>
+                  <h4><a href="{% url 'service-single' item.id %}">{{item.name}}</a></h4>
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                </div>
+            </div>
+            {% elif forloop.counter == 3 %}  
+               <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon-box">
+                    <div class="icon"><i class="{{item.css_name}}"></i></div>
+                    <h4><a href="{% url 'service-single' item.id %}">{{item.name}}</a></h4>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                  </div>
+               </div>
+            {% else %}   
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-box">
+                  <div class="icon"><i class="{{item.css_name}}"></i></div>
+                  <h4><a href="{% url 'service-single' item.id %}">{{item.name}}</a></h4>
+                  <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+<!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>Check our Team</p>
+        </div>
+
+        <div class="row">
+        {% for item in board_mem %}  
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{{item.image.url}}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{item.name}}</h4>
+                <span>{{item.designation}}</span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}  
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+
+        <div>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                  <p>GM Equity Limited Concord Baksh Tower, 11th Floor (11-B) Plot-11/A, Road-48, Block-CWN, Kamal Ataturk Avenue Gulshan-2, Dhaka-1212, Bangladesh.</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@gmequity.com.bd</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+880241080760-64</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+             <form method = 'POST'>
+              {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    {{form.name}}
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    {{form.fromemail}}
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  {{form.subject}}
+                </div>
+                <div class="form-group mt-3">
+                  {{form.message}}
+                </div>
+                <div class="text-center"><button type="submit" class="btn btn-success">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+</main>
+    {% endblock content %}
